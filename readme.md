@@ -1,9 +1,10 @@
 # Meteor Boilerplate
 
-This is a bare-bones Meteor app that demonstrates a logical structure and shows
-some very useful packages. This project is a good base for rapid prototyping.
+This is a bare-bones Meteor app that demonstrates a logical structure and uses
+some very helpful packages. This project is a good base for rapid prototyping.
 
-After cloning this repo, run `meteor install` to install the correct packages.
+When you clone this repo and first run meteor, it should install the required
+packages.
 
 
 ## Directory Structure
