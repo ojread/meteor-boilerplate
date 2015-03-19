@@ -34,11 +34,11 @@ Router.map(function () {
 			var post = Posts.findOne(this.params._id);
 			if (post) {
 				var author = Meteor.users.findOne(post.authorId);
+				return {
+					post: post,
+					author: author
+				};
 			}
-			return {
-				post: post,
-				author: author
-			};
 		}
 	});
 

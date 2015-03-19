@@ -1,6 +1,24 @@
-// Publish the titles of all posts. No need to publish all fields.
+// Publish the titles of all posts with the author's username.
+// No need to publish all fields.
 Meteor.publish('posts', function () {
-	return Posts.find({}, {fields: {title: 1}});
+	Meteor.publishWithRelations({
+		handle: this,
+		collection: Posts,
+		filter: {},
+		options: {
+			fields: {
+				title: 1,
+				authorId: 1
+			}
+		},
+		mappings: [{
+			key: 'authorId',
+			collection: Meteor.users,
+			options: {
+				fields: {username: 1}
+			}
+		}]
+	});
 });
 
 // Publish all fields of a single post plus the username of the author.
