@@ -1,0 +1,6 @@
+<template name="postEdit">
+	<div class="page-header">
+		<h1>Edit post</h1>
+	</div>
+	{{> quickForm id="updatePost" collection="Posts" type="update" doc=post fields="title,content" buttonContent="Save"}}
+</template>

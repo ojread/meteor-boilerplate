@@ -1,0 +1,21 @@
+<template name="postIndex">
+	<div class="page-header">
+		<h1>
+			Posts
+			{{#if isInRole 'admin'}}
+				<a class="btn btn-primary" href="{{pathFor 'postNew'}}">New</a>
+			{{/if}}
+		</h1>
+	</div>
+	<div class="list-group">
+		{{#each posts}}
+			{{> postIndexItem}}
+		{{else}}
+			<a class="list-group-item">No posts</a>
+		{{/each}}
+	</div>
+</template>
+
+<template name="postIndexItem">
+	<a class="list-group-item" href="{{pathFor 'postSingle'}}">{{title}}</a>
+</template>

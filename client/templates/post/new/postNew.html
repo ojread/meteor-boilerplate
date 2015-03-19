@@ -1,0 +1,6 @@
+<template name="postNew">
+    <div class="page-header">
+		<h1>New post</h1>
+	</div>
+    {{> quickForm id="insertPost" collection="Posts" type="insert" fields="title,content" buttonContent="Save"}}
+</template>

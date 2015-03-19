@@ -1,0 +1,33 @@
+<template name="userIndex">
+	<div class="page-header">
+		<h1>Users</h1>
+	</div>
+
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Username</th>
+				<th>Email</th>
+				<th>Role</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#each users}}
+				{{> userIndexItem}}
+			{{/each}}
+		</tbody>
+	</table>
+</template>
+
+<template name="userIndexItem">
+	<tr>
+		<td>{{username}}</td>
+		<td>{{#each emails}}{{address}} {{/each}}</td>
+		<td>
+			<select class="userRole form-control">
+				<option value="">None</option>
+				<option value="admin" {{roleSelected 'admin'}}>Admin</option>
+			</select>
+		</td>
+	</tr>
+</template>

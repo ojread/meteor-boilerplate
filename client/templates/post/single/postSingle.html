@@ -1,0 +1,15 @@
+<template name="postSingle">
+	<div class="page-header">
+		<h1>
+			{{post.title}}
+			<small>by {{author.username}}</small>
+			{{#if isInRole 'admin'}}
+				{{#with post}}
+					<a class="btn btn-primary" href="{{pathFor 'postEdit'}}">Edit</a>
+				{{/with}}
+				<button id="deletePost" class="btn btn-danger">Delete</button>
+			{{/if}}
+		</h1>
+	</div>
+	<p>{{post.content}}</p>
+</template>
